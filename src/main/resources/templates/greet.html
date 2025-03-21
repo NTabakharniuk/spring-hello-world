@@ -5,6 +5,11 @@
     <title>Привітання</title>
 </head>
 <body>
-<h1 th:text="${message}"></h1>
+<h1 th:text="${message} ?: 'Введіть ваше ім’я:'"></h1>
+
+<form action="/greet" method="post">
+    <input type="text" name="name" placeholder="Введіть ім’я" required>
+    <button type="submit">Надіслати</button>
+</form>
 </body>
 </html>
